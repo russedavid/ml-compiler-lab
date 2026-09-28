@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=78"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-compiler-lab"
+version = "0.1.0"
+description = "CuTe kernels, persistent graph execution, and model compilation experiments"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8", "ruff>=0.16"]
+plot = ["matplotlib>=3.8"]
+gpu = ["torch>=2.11", "nvidia-cutlass-dsl==4.8.0", "iree-turbine==3.9.0", "iree-base-compiler==3.12.0", "iree-base-runtime==3.12.0"]
+
+[tool.setuptools.packages.find]
+include = ["compiler_lab*"]
