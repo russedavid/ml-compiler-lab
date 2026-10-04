@@ -1,0 +1,1591 @@
+{
+  "recorded_on": "2026-10-05",
+  "device": "NVIDIA GeForce RTX 3090",
+  "precision": "FP16 input/weights and hidden state; FP32 accumulation, bias and output",
+  "packages": {
+    "torch": "2.11.0+cu128",
+    "nvidia-cutlass-dsl": "4.8.0"
+  },
+  "rounds": 5,
+  "samples_per_round": 200,
+  "source_sha256": {
+    "megakernel_benchmark.py": "3ed4c8687c44ed1471fcc04c9866c9ef93675996e4a5250161dac4d8cfe976d5",
+    "benchmark.py": "a59126855d1fc8e1feec788df5cd9a6f3e4f0a4fc29e46841538193091990f52",
+    "kernels.py": "3cbca910f535cfbb1bf3f392e3106bae374a69a7d45adddf405277b07710d333",
+    "cute_smoke.py": "2dc8fa2de1b48000995504291d28aeb4948b2f2fdee01f3bd79cd5fff89d41a5",
+    "tensorcore_benchmark.py": "65bee98bad4ac41b13c90a97c99299c1c5917c88000c2fd7259aa21f51709dd6",
+    "mlp.py": "6f08341567176b2927b93d3caf3fe53e33a8fa54d9a1dd6813b8903173c6d0c8",
+    "tensorcore_mlp.py": "76f2817d643b21f1e81ce9321146d5e6ac553c29a79ec295a8ec6d33244ba2de",
+    "metrics.py": "764cdd6f7e32ace08a9f4891166d5a3322a6602493f5a7d470de37dbf3c4c5d0",
+    "compiled_run.py": "f315aa4d9f4ef737b10f34dfdfe8cc28d710622353d9c2d7f386f2ad786b67f4",
+    "companion_checks.py": "3c3b1b9f78b5c7447ac50ee629987d7551a2c233da594d5c02c518cc35a5e3ce",
+    "tensorcore_runner.py": "203ec37ba557ec9752d40cf8b7fa9a868935c13623a955e3c8aeafa8a617239a",
+    "models.py": "25d9270310d820e43c8cf2ce7908759be5e86f96daa5fabf85757c6b35c4b877",
+    "frontend.py": "18011b3a830932263d8197ec325b37dc1035379aa177bca59e0d32c4efe24ebf",
+    "__init__.py": "d231f3e57818743f9f65eb238f7f5f2a1151b6b9d6f594ca82207550e53e7e1b",
+    "baseline.py": "35539d7ba84f7a17d14647b807d0c2d29d5ecea9369611399a142391f50ea85b",
+    "runner.py": "4da757db0be6efd5652350d68409b13d75fe1eec15d4020bc4b3c4de919e200e",
+    "quality.py": "1011f6ae2a25d86dc8cb7da2d7f0c31a6d86358435bcbc86fac00044227acbff",
+    "tensorcore.py": "717adcfab86e7341895f4ef2a0d2c1593d5d8240ff9e9e8b6c88afc0ffe54b65"
+  },
+  "development": [
+    {
+      "shape": {
+        "rows": 1,
+        "channels": 7,
+        "hidden": 13
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.030559999868273735,
+            "p95_ms": 0.03453439846634864,
+            "min_ms": 0.028704000636935234,
+            "max_ms": 0.04095999896526337,
+            "mean_ms": 0.030728096023201944
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.039231,
+            "p95_ms": 0.0441115,
+            "min_ms": 0.038071,
+            "max_ms": 0.058442,
+            "mean_ms": 0.039803249
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02247999981045723,
+            "p95_ms": 0.024587200861424196,
+            "min_ms": 0.020479999482631683,
+            "max_ms": 0.029600000008940697,
+            "mean_ms": 0.022544704070314767
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.031211,
+            "p95_ms": 0.035042499999999976,
+            "min_ms": 0.029861,
+            "max_ms": 0.038811,
+            "mean_ms": 0.03156209
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02252800017595291,
+            "p95_ms": 0.025409599766135216,
+            "min_ms": 0.021503999829292297,
+            "max_ms": 0.053408000618219376,
+            "mean_ms": 0.022927968110889197
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.031491,
+            "p95_ms": 0.03491299999999999,
+            "min_ms": 0.030371,
+            "max_ms": 0.062681,
+            "mean_ms": 0.031919157
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.07577600330114365,
+            "p95_ms": 0.0826592031866312,
+            "min_ms": 0.07372800260782242,
+            "max_ms": 0.09113600105047226,
+            "mean_ms": 0.07649011339992284
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.0854375,
+            "p95_ms": 0.09271505,
+            "min_ms": 0.083372,
+            "max_ms": 0.104443,
+            "mean_ms": 0.08629155799999999
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.008191999979317188,
+            "p95_ms": 0.009216000325977802,
+            "min_ms": 0.007199999876320362,
+            "max_ms": 0.018432000651955605,
+            "mean_ms": 0.00847148797661066
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.016761,
+            "p95_ms": 0.017810999999999997,
+            "min_ms": 0.01631,
+            "max_ms": 0.026631,
+            "mean_ms": 0.016922756
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.008191999979317188,
+            "p95_ms": 0.00825599953532219,
+            "min_ms": 0.006144000217318535,
+            "max_ms": 0.014047999866306782,
+            "mean_ms": 0.008037792007438838
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.01636,
+            "p95_ms": 0.01725195,
+            "min_ms": 0.01603,
+            "max_ms": 0.021851,
+            "mean_ms": 0.016472662
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.008191999979317188,
+            "p95_ms": 0.009216000325977802,
+            "min_ms": 0.007424000184983015,
+            "max_ms": 0.018144000321626663,
+            "mean_ms": 0.008443071972578764
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.016731,
+            "p95_ms": 0.01755105,
+            "min_ms": 0.01633,
+            "max_ms": 0.026341,
+            "mean_ms": 0.016860457
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.014336000196635723,
+            "p95_ms": 0.015359999611973763,
+            "min_ms": 0.01408000010997057,
+            "max_ms": 0.018432000651955605,
+            "mean_ms": 0.014521472122520208
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.0228655,
+            "p95_ms": 0.023762949999999998,
+            "min_ms": 0.02256,
+            "max_ms": 0.027701,
+            "mean_ms": 0.022990766
+          }
+        }
+      }
+    },
+    {
+      "shape": {
+        "rows": 33,
+        "channels": 32,
+        "hidden": 64
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.030719999223947525,
+            "p95_ms": 0.03481600061058998,
+            "min_ms": 0.02953599952161312,
+            "max_ms": 0.04915200173854828,
+            "mean_ms": 0.031224575797095894
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.039771,
+            "p95_ms": 0.0443135,
+            "min_ms": 0.038402,
+            "max_ms": 0.058321,
+            "mean_ms": 0.040279832999999994
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02252800017595291,
+            "p95_ms": 0.02457600086927414,
+            "min_ms": 0.020640000700950623,
+            "max_ms": 0.033535998314619064,
+            "mean_ms": 0.022728224091231822
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.031396,
+            "p95_ms": 0.034601,
+            "min_ms": 0.030081,
+            "max_ms": 0.042181,
+            "mean_ms": 0.031745276
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.023552000522613525,
+            "p95_ms": 0.025599999353289604,
+            "min_ms": 0.022495999932289124,
+            "max_ms": 0.029952000826597214,
+            "mean_ms": 0.023564928313717246
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.032321,
+            "p95_ms": 0.035732999999999994,
+            "min_ms": 0.031461,
+            "max_ms": 0.039671,
+            "mean_ms": 0.032618636
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08191999793052673,
+            "p95_ms": 0.08899679966270924,
+            "min_ms": 0.0798719972372055,
+            "max_ms": 0.0923520028591156,
+            "mean_ms": 0.08257587045431138
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.091752,
+            "p95_ms": 0.0991435,
+            "min_ms": 0.089732,
+            "max_ms": 0.102953,
+            "mean_ms": 0.092537539
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.01228800043463707,
+            "p95_ms": 0.013311999849975109,
+            "min_ms": 0.012160000391304493,
+            "max_ms": 0.02147199958562851,
+            "mean_ms": 0.012706432214006781
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.021081,
+            "p95_ms": 0.021920549999999997,
+            "min_ms": 0.020761,
+            "max_ms": 0.029811,
+            "mean_ms": 0.021220365999999997
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.00848000030964613,
+            "p95_ms": 0.009216000325977802,
+            "min_ms": 0.008063999935984612,
+            "max_ms": 0.01228800043463707,
+            "mean_ms": 0.00869376003742218
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.0170555,
+            "p95_ms": 0.01796005,
+            "min_ms": 0.01675,
+            "max_ms": 0.02308,
+            "mean_ms": 0.017199161
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.010239999741315842,
+            "p95_ms": 0.010304000228643417,
+            "min_ms": 0.009216000325977802,
+            "max_ms": 0.013311999849975109,
+            "mean_ms": 0.010129279917106033
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.018481,
+            "p95_ms": 0.019292499999999997,
+            "min_ms": 0.01817,
+            "max_ms": 0.02317,
+            "mean_ms": 0.018610887
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.016383999958634377,
+            "p95_ms": 0.01740800030529499,
+            "min_ms": 0.015359999611973763,
+            "max_ms": 0.02035200037062168,
+            "mean_ms": 0.016584319988265633
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.024941,
+            "p95_ms": 0.0257715,
+            "min_ms": 0.024621,
+            "max_ms": 0.029401,
+            "mean_ms": 0.025075291
+          }
+        }
+      }
+    },
+    {
+      "shape": {
+        "rows": 129,
+        "channels": 31,
+        "hidden": 47
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.030719999223947525,
+            "p95_ms": 0.03472479991614818,
+            "min_ms": 0.02956799976527691,
+            "max_ms": 0.05644800141453743,
+            "mean_ms": 0.031206143813207746
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.039876499999999995,
+            "p95_ms": 0.04406405,
+            "min_ms": 0.038421,
+            "max_ms": 0.066172,
+            "mean_ms": 0.040311652999999996
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02252800017595291,
+            "p95_ms": 0.02457600086927414,
+            "min_ms": 0.021503999829292297,
+            "max_ms": 0.03481600061058998,
+            "mean_ms": 0.022816736130043865
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.031541,
+            "p95_ms": 0.034325999999999995,
+            "min_ms": 0.030281,
+            "max_ms": 0.043982,
+            "mean_ms": 0.031841515
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02252800017595291,
+            "p95_ms": 0.02457600086927414,
+            "min_ms": 0.021503999829292297,
+            "max_ms": 0.03891199827194214,
+            "mean_ms": 0.022971552174538373
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.031666,
+            "p95_ms": 0.0348115,
+            "min_ms": 0.030291,
+            "max_ms": 0.056742,
+            "mean_ms": 0.031993513
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08294399827718735,
+            "p95_ms": 0.09011200070381165,
+            "min_ms": 0.08089599758386612,
+            "max_ms": 0.09625600278377533,
+            "mean_ms": 0.08355059057474136
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.092683,
+            "p95_ms": 0.100094,
+            "min_ms": 0.090723,
+            "max_ms": 0.106653,
+            "mean_ms": 0.093439534
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.011264000087976456,
+            "p95_ms": 0.01228800043463707,
+            "min_ms": 0.010239999741315842,
+            "max_ms": 0.015359999611973763,
+            "mean_ms": 0.011422912086360157
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.01978,
+            "p95_ms": 0.020560549999999997,
+            "min_ms": 0.019411,
+            "max_ms": 0.024721,
+            "mean_ms": 0.019942063
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.008224000222980976,
+            "p95_ms": 0.009216000325977802,
+            "min_ms": 0.007391999941319227,
+            "max_ms": 0.014047999866306782,
+            "mean_ms": 0.008482463964261115
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.016841,
+            "p95_ms": 0.01737145,
+            "min_ms": 0.01648,
+            "max_ms": 0.02218,
+            "mean_ms": 0.016961030000000002
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.009216000325977802,
+            "p95_ms": 0.010049600154161452,
+            "min_ms": 0.008191999979317188,
+            "max_ms": 0.013088000006973743,
+            "mean_ms": 0.009191968171857298
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.017531,
+            "p95_ms": 0.01817005,
+            "min_ms": 0.01715,
+            "max_ms": 0.024511,
+            "mean_ms": 0.017664760999999998
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.018432000651955605,
+            "p95_ms": 0.019392000511288643,
+            "min_ms": 0.01740800030529499,
+            "max_ms": 0.02252800017595291,
+            "mean_ms": 0.018474624421447514
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.02684,
+            "p95_ms": 0.0275925,
+            "min_ms": 0.02645,
+            "max_ms": 0.032341,
+            "mean_ms": 0.026963495
+          }
+        }
+      }
+    },
+    {
+      "shape": {
+        "rows": 257,
+        "channels": 64,
+        "hidden": 128
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.03379200026392937,
+            "p95_ms": 0.035840000957250595,
+            "min_ms": 0.03276799991726875,
+            "max_ms": 0.04419200122356415,
+            "mean_ms": 0.034058592073619366
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.042821,
+            "p95_ms": 0.045624,
+            "min_ms": 0.041671,
+            "max_ms": 0.053911,
+            "mean_ms": 0.043139599
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.03049599938094616,
+            "p95_ms": 0.03174399957060814,
+            "min_ms": 0.028672000393271446,
+            "max_ms": 0.037696000188589096,
+            "mean_ms": 0.030384544037282468
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.039191,
+            "p95_ms": 0.041106,
+            "min_ms": 0.037991,
+            "max_ms": 0.046622,
+            "mean_ms": 0.039399978999999995
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.03379200026392937,
+            "p95_ms": 0.03481600061058998,
+            "min_ms": 0.03276799991726875,
+            "max_ms": 0.04070400074124336,
+            "mean_ms": 0.03404534406960011
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.042821,
+            "p95_ms": 0.044836499999999994,
+            "min_ms": 0.041701,
+            "max_ms": 0.049951,
+            "mean_ms": 0.043050003
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08287999778985977,
+            "p95_ms": 0.09005120024085045,
+            "min_ms": 0.08073599636554718,
+            "max_ms": 0.09641599655151367,
+            "mean_ms": 0.08335967852175236
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.092413,
+            "p95_ms": 0.099813,
+            "min_ms": 0.090423,
+            "max_ms": 0.111393,
+            "mean_ms": 0.09322449299999999
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.01945599913597107,
+            "p95_ms": 0.020287999883294106,
+            "min_ms": 0.018432000651955605,
+            "max_ms": 0.023552000522613525,
+            "mean_ms": 0.019292159689590336
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.0276555,
+            "p95_ms": 0.0284205,
+            "min_ms": 0.027331,
+            "max_ms": 0.033801,
+            "mean_ms": 0.027802836
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.01740800030529499,
+            "p95_ms": 0.018432000651955605,
+            "min_ms": 0.016383999958634377,
+            "max_ms": 0.021503999829292297,
+            "mean_ms": 0.01763632021844387
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.026011,
+            "p95_ms": 0.0266515,
+            "min_ms": 0.025721,
+            "max_ms": 0.030561,
+            "mean_ms": 0.026133862
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.021215999498963356,
+            "p95_ms": 0.021503999829292297,
+            "min_ms": 0.02035200037062168,
+            "max_ms": 0.02457600086927414,
+            "mean_ms": 0.020984095700085165
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.029351,
+            "p95_ms": 0.030062,
+            "min_ms": 0.028971,
+            "max_ms": 0.033961,
+            "mean_ms": 0.029468483
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.018144000321626663,
+            "p95_ms": 0.018432000651955605,
+            "min_ms": 0.017216000705957413,
+            "max_ms": 0.021503999829292297,
+            "mean_ms": 0.017897760331630708
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.026271,
+            "p95_ms": 0.02692005,
+            "min_ms": 0.025981,
+            "max_ms": 0.031281,
+            "mean_ms": 0.026378925
+          }
+        }
+      }
+    },
+    {
+      "shape": {
+        "rows": 1024,
+        "channels": 128,
+        "hidden": 256
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.04915200173854828,
+            "p95_ms": 0.050175998359918594,
+            "min_ms": 0.04809600114822388,
+            "max_ms": 0.05632000043988228,
+            "mean_ms": 0.04913811307400465
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.058242,
+            "p95_ms": 0.0606125,
+            "min_ms": 0.057172,
+            "max_ms": 0.071813,
+            "mean_ms": 0.058499299
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.07168000191450119,
+            "p95_ms": 0.07372800260782242,
+            "min_ms": 0.07065600156784058,
+            "max_ms": 0.07884799689054489,
+            "mean_ms": 0.07217699378728866
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.081192,
+            "p95_ms": 0.08383305,
+            "min_ms": 0.079902,
+            "max_ms": 0.089193,
+            "mean_ms": 0.081504722
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.06860800087451935,
+            "p95_ms": 0.07065600156784058,
+            "min_ms": 0.06755200028419495,
+            "max_ms": 0.07673600316047668,
+            "mean_ms": 0.0688304327428341
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.077962,
+            "p95_ms": 0.0807425,
+            "min_ms": 0.076663,
+            "max_ms": 0.089292,
+            "mean_ms": 0.078287761
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08396799862384796,
+            "p95_ms": 0.09113600105047226,
+            "min_ms": 0.08191999793052673,
+            "max_ms": 0.10025600343942642,
+            "mean_ms": 0.08451327878236771
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.094088,
+            "p95_ms": 0.101974,
+            "min_ms": 0.091822,
+            "max_ms": 0.110683,
+            "mean_ms": 0.094905443
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.03788800165057182,
+            "p95_ms": 0.03891199827194214,
+            "min_ms": 0.03686400130391121,
+            "max_ms": 0.04291199892759323,
+            "mean_ms": 0.03824921686202288
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.046791,
+            "p95_ms": 0.04783105,
+            "min_ms": 0.046151,
+            "max_ms": 0.051751,
+            "mean_ms": 0.046913990999999995
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.05923200026154518,
+            "p95_ms": 0.05939200147986412,
+            "min_ms": 0.058368001133203506,
+            "max_ms": 0.06249599903821945,
+            "mean_ms": 0.058999552916735414
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.0675215,
+            "p95_ms": 0.068682,
+            "min_ms": 0.067072,
+            "max_ms": 0.073213,
+            "mean_ms": 0.067674934
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.055296000093221664,
+            "p95_ms": 0.05609759874641895,
+            "min_ms": 0.05427199974656105,
+            "max_ms": 0.05939200147986412,
+            "mean_ms": 0.05518774388730526
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.063692,
+            "p95_ms": 0.0647725,
+            "min_ms": 0.063272,
+            "max_ms": 0.067622,
+            "mean_ms": 0.063823712
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.025599999353289604,
+            "p95_ms": 0.026623999699950218,
+            "min_ms": 0.02457600086927414,
+            "max_ms": 0.028672000393271446,
+            "mean_ms": 0.02576793553493917
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.034271,
+            "p95_ms": 0.0349925,
+            "min_ms": 0.033891,
+            "max_ms": 0.038821,
+            "mean_ms": 0.034386285
+          }
+        }
+      }
+    }
+  ],
+  "assessment": [
+    {
+      "shape": {
+        "rows": 5,
+        "channels": 19,
+        "hidden": 37
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.030719999223947525,
+            "p95_ms": 0.03379200026392937,
+            "min_ms": 0.028704000636935234,
+            "max_ms": 0.04198399931192398,
+            "mean_ms": 0.030878751905635
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.039441,
+            "p95_ms": 0.04392255,
+            "min_ms": 0.038061,
+            "max_ms": 0.056881,
+            "mean_ms": 0.039920131
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.022288000211119652,
+            "p95_ms": 0.02457600086927414,
+            "min_ms": 0.020640000700950623,
+            "max_ms": 0.03081599995493889,
+            "mean_ms": 0.022367136042565107
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.030905500000000002,
+            "p95_ms": 0.0348145,
+            "min_ms": 0.029941,
+            "max_ms": 0.040542,
+            "mean_ms": 0.031334665
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02252800017595291,
+            "p95_ms": 0.025472000241279602,
+            "min_ms": 0.021503999829292297,
+            "max_ms": 0.03481600061058998,
+            "mean_ms": 0.02297347216308117
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.031605999999999995,
+            "p95_ms": 0.035009549999999987,
+            "min_ms": 0.030431,
+            "max_ms": 0.043881,
+            "mean_ms": 0.031974036000000004
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08089599758386612,
+            "p95_ms": 0.08806400001049042,
+            "min_ms": 0.07884799689054489,
+            "max_ms": 0.1013759970664978,
+            "mean_ms": 0.08173286249488593
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.090573,
+            "p95_ms": 0.09811600000000001,
+            "min_ms": 0.088633,
+            "max_ms": 0.111333,
+            "mean_ms": 0.091462375
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.009184000082314014,
+            "p95_ms": 0.009216000325977802,
+            "min_ms": 0.008191999979317188,
+            "max_ms": 0.014336000196635723,
+            "mean_ms": 0.008945344127714633
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.01725,
+            "p95_ms": 0.018193499999999998,
+            "min_ms": 0.016921,
+            "max_ms": 0.023651,
+            "mean_ms": 0.017393917000000002
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.008191999979317188,
+            "p95_ms": 0.008991999551653862,
+            "min_ms": 0.00723200011998415,
+            "max_ms": 0.03385600075125694,
+            "mean_ms": 0.008269663996063173
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.0165,
+            "p95_ms": 0.01742105,
+            "min_ms": 0.016071,
+            "max_ms": 0.042711,
+            "mean_ms": 0.016662001
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.008191999979317188,
+            "p95_ms": 0.00899359956383705,
+            "min_ms": 0.0071680000983178616,
+            "max_ms": 0.013311999849975109,
+            "mean_ms": 0.00819619199540466
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.016481,
+            "p95_ms": 0.017351449999999997,
+            "min_ms": 0.016131,
+            "max_ms": 0.02223,
+            "mean_ms": 0.01659315
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.016383999958634377,
+            "p95_ms": 0.016383999958634377,
+            "min_ms": 0.015359999611973763,
+            "max_ms": 0.020416000857949257,
+            "mean_ms": 0.016285183936357497
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.024581,
+            "p95_ms": 0.0255115,
+            "min_ms": 0.024261,
+            "max_ms": 0.030061,
+            "mean_ms": 0.024693341
+          }
+        }
+      }
+    },
+    {
+      "shape": {
+        "rows": 49,
+        "channels": 48,
+        "hidden": 96
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.03174399957060814,
+            "p95_ms": 0.03481600061058998,
+            "min_ms": 0.030559999868273735,
+            "max_ms": 0.04095999896526337,
+            "mean_ms": 0.0320919357277453
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.040871,
+            "p95_ms": 0.04534245,
+            "min_ms": 0.039401,
+            "max_ms": 0.049881,
+            "mean_ms": 0.041297106
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02457600086927414,
+            "p95_ms": 0.026623999699950218,
+            "min_ms": 0.023552000522613525,
+            "max_ms": 0.041120000183582306,
+            "mean_ms": 0.025057184349745514
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.033951,
+            "p95_ms": 0.0368015,
+            "min_ms": 0.032791,
+            "max_ms": 0.050841,
+            "mean_ms": 0.03427525100000001
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.027648000046610832,
+            "p95_ms": 0.028672000393271446,
+            "min_ms": 0.02643200010061264,
+            "max_ms": 0.03276799991726875,
+            "mean_ms": 0.02757500797137618
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.036491,
+            "p95_ms": 0.039052,
+            "min_ms": 0.035251,
+            "max_ms": 0.044262,
+            "mean_ms": 0.036737813
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08588799834251404,
+            "p95_ms": 0.09222720190882683,
+            "min_ms": 0.08396799862384796,
+            "max_ms": 0.1034879982471466,
+            "mean_ms": 0.08640489543229342
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.09537799999999999,
+            "p95_ms": 0.1025235,
+            "min_ms": 0.093552,
+            "max_ms": 0.118553,
+            "mean_ms": 0.096276596
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.015359999611973763,
+            "p95_ms": 0.016287999227643013,
+            "min_ms": 0.014336000196635723,
+            "max_ms": 0.01945599913597107,
+            "mean_ms": 0.015474623736925423
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.023791,
+            "p95_ms": 0.024703999999999997,
+            "min_ms": 0.023421,
+            "max_ms": 0.030191,
+            "mean_ms": 0.023925166
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.012095999903976917,
+            "p95_ms": 0.01228800043463707,
+            "min_ms": 0.011103999800980091,
+            "max_ms": 0.0163199994713068,
+            "mean_ms": 0.011866144181229174
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.02023,
+            "p95_ms": 0.020841449999999997,
+            "min_ms": 0.01977,
+            "max_ms": 0.024671,
+            "mean_ms": 0.020295801
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.014336000196635723,
+            "p95_ms": 0.014529599808156489,
+            "min_ms": 0.013311999849975109,
+            "max_ms": 0.015359999611973763,
+            "mean_ms": 0.014127552079036832
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.02255,
+            "p95_ms": 0.02327145,
+            "min_ms": 0.021951,
+            "max_ms": 0.026541,
+            "mean_ms": 0.022587299
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.018432000651955605,
+            "p95_ms": 0.01945599913597107,
+            "min_ms": 0.018303999677300453,
+            "max_ms": 0.023552000522613525,
+            "mean_ms": 0.01881936031766236
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.027171,
+            "p95_ms": 0.02803105,
+            "min_ms": 0.02676,
+            "max_ms": 0.032371,
+            "mean_ms": 0.027280098
+          }
+        }
+      }
+    },
+    {
+      "shape": {
+        "rows": 193,
+        "channels": 63,
+        "hidden": 111
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.03376000002026558,
+            "p95_ms": 0.03667519986629486,
+            "min_ms": 0.03174399957060814,
+            "max_ms": 0.06364800035953522,
+            "mean_ms": 0.0338385280109942
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.042641,
+            "p95_ms": 0.04664395,
+            "min_ms": 0.040961,
+            "max_ms": 0.086133,
+            "mean_ms": 0.043087349000000004
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.02953599952161312,
+            "p95_ms": 0.030719999223947525,
+            "min_ms": 0.021503999829292297,
+            "max_ms": 0.038176000118255615,
+            "mean_ms": 0.029446176351979374
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.038362,
+            "p95_ms": 0.04102545,
+            "min_ms": 0.037271,
+            "max_ms": 0.277278,
+            "mean_ms": 0.038911709
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.032735999673604965,
+            "p95_ms": 0.03379200026392937,
+            "min_ms": 0.03155200183391571,
+            "max_ms": 0.04403200000524521,
+            "mean_ms": 0.03263788782805204
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.0416165,
+            "p95_ms": 0.044263,
+            "min_ms": 0.040331,
+            "max_ms": 0.053332,
+            "mean_ms": 0.041883704
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08294399827718735,
+            "p95_ms": 0.09011200070381165,
+            "min_ms": 0.0809599980711937,
+            "max_ms": 0.0963200032711029,
+            "mean_ms": 0.08393372663110495
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.092873,
+            "p95_ms": 0.100296,
+            "min_ms": 0.090892,
+            "max_ms": 0.106603,
+            "mean_ms": 0.093760897
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.018432000651955605,
+            "p95_ms": 0.018432000651955605,
+            "min_ms": 0.01740800030529499,
+            "max_ms": 0.023264000192284584,
+            "mean_ms": 0.01823942437954247
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.026631,
+            "p95_ms": 0.0274215,
+            "min_ms": 0.026251,
+            "max_ms": 0.031451,
+            "mean_ms": 0.026757927
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.016383999958634377,
+            "p95_ms": 0.016383999958634377,
+            "min_ms": 0.015359999611973763,
+            "max_ms": 0.01740800030529499,
+            "mean_ms": 0.016212639932520687
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.024621,
+            "p95_ms": 0.025250050000000003,
+            "min_ms": 0.024211,
+            "max_ms": 0.034831,
+            "mean_ms": 0.024711645999999997
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.01942400075495243,
+            "p95_ms": 0.01945599913597107,
+            "min_ms": 0.018432000651955605,
+            "max_ms": 0.023552000522613525,
+            "mean_ms": 0.01917004777304828
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.027551,
+            "p95_ms": 0.0283625,
+            "min_ms": 0.027171,
+            "max_ms": 0.032401,
+            "mean_ms": 0.027648265
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.020320000126957893,
+            "p95_ms": 0.020479999482631683,
+            "min_ms": 0.01929599978029728,
+            "max_ms": 0.0244159996509552,
+            "mean_ms": 0.02008259148709476
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.028461,
+            "p95_ms": 0.029213,
+            "min_ms": 0.028111,
+            "max_ms": 0.034871,
+            "mean_ms": 0.028583931
+          }
+        }
+      }
+    },
+    {
+      "shape": {
+        "rows": 513,
+        "channels": 96,
+        "hidden": 192
+      },
+      "engines": {
+        "conventional": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.038656000047922134,
+            "p95_ms": 0.040833601541817185,
+            "min_ms": 0.03686400130391121,
+            "max_ms": 0.052960000932216644,
+            "mean_ms": 0.038636096395552155
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.047442,
+            "p95_ms": 0.0506335,
+            "min_ms": 0.046091,
+            "max_ms": 0.064222,
+            "mean_ms": 0.047800134
+          }
+        },
+        "persistent": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.048128001391887665,
+            "p95_ms": 0.050175998359918594,
+            "min_ms": 0.04710400104522705,
+            "max_ms": 0.05523199960589409,
+            "mean_ms": 0.048695808932185176
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.057582,
+            "p95_ms": 0.06011205,
+            "min_ms": 0.056412,
+            "max_ms": 0.064162,
+            "mean_ms": 0.057874173
+          }
+        },
+        "persistent-global": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.055296000093221664,
+            "p95_ms": 0.05734400078654289,
+            "min_ms": 0.05427199974656105,
+            "max_ms": 0.07168000191450119,
+            "mean_ms": 0.05576051197946072
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.064702,
+            "p95_ms": 0.067322,
+            "min_ms": 0.063632,
+            "max_ms": 0.081683,
+            "mean_ms": 0.065028582
+          }
+        },
+        "torch-cublas": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.08396799862384796,
+            "p95_ms": 0.09113600105047226,
+            "min_ms": 0.08191999793052673,
+            "max_ms": 0.1157120019197464,
+            "mean_ms": 0.08485468686372041
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.093848,
+            "p95_ms": 0.1011135,
+            "min_ms": 0.091543,
+            "max_ms": 0.125754,
+            "mean_ms": 0.094698363
+          }
+        },
+        "conventional-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.026623999699950218,
+            "p95_ms": 0.026623999699950218,
+            "min_ms": 0.025599999353289604,
+            "max_ms": 0.03174399957060814,
+            "mean_ms": 0.026396351696923375
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.034731,
+            "p95_ms": 0.035633,
+            "min_ms": 0.034321,
+            "max_ms": 0.040992,
+            "mean_ms": 0.034871334000000004
+          }
+        },
+        "persistent-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.03577600046992302,
+            "p95_ms": 0.035840000957250595,
+            "min_ms": 0.03481600061058998,
+            "max_ms": 0.03891199827194214,
+            "mean_ms": 0.03555401650816202
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.043861,
+            "p95_ms": 0.044873500000000004,
+            "min_ms": 0.043521,
+            "max_ms": 0.048061,
+            "mean_ms": 0.043994767
+          }
+        },
+        "persistent-global-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.04198399931192398,
+            "p95_ms": 0.04297599941492081,
+            "min_ms": 0.04095999896526337,
+            "max_ms": 0.04608000069856644,
+            "mean_ms": 0.04212854352593422
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.050502,
+            "p95_ms": 0.051352,
+            "min_ms": 0.050091,
+            "max_ms": 0.055881,
+            "mean_ms": 0.050625263
+          }
+        },
+        "torch-cublas-graph": {
+          "passed": true,
+          "replay_changed_input": true,
+          "stream_summary": {
+            "count": 1000,
+            "p50_ms": 0.021503999829292297,
+            "p95_ms": 0.02252800017595291,
+            "min_ms": 0.02143999934196472,
+            "max_ms": 0.026335999369621277,
+            "mean_ms": 0.021967807956039906
+          },
+          "host_summary": {
+            "count": 1000,
+            "p50_ms": 0.030321,
+            "p95_ms": 0.0309915,
+            "min_ms": 0.029931,
+            "max_ms": 0.034821,
+            "mean_ms": 0.030420299
+          }
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Original random-weight residual MLP; no perception accuracy or whole-LLM serving claim.",
+    "Device-resident input and output; CUDA-event intervals may include dispatch idle gaps.",
+    "Repeated rounds share one process; assessment shapes/seed separate from development, not a population generalization proof.",
+    "Global-intermediate variant preserves owner/compute schedule but can alter resource allocation and memory behavior."
+  ],
+  "sanitizers": {
+    "memcheck": "zero errors",
+    "racecheck": "zero hazards",
+    "synccheck": "zero errors"
+  },
+  "compiler": {
+    "source_commit": "2b05c5dbb2f2ecb27c0d3941e80ee8d2f16e890d",
+    "positive_negative_pass_tests": "passed",
+    "small_gpu_output": {
+      "passed": true,
+      "max_abs_error": 0.0,
+      "mean_abs_error": 0.0,
+      "violations": 0,
+      "elements": 1056,
+      "rtol": 0.0001,
+      "atol": 1e-05
+    },
+    "fallback_gpu_output": {
+      "passed": true,
+      "max_abs_error": 1.3113021850585938e-06,
+      "mean_abs_error": 8.125329031827278e-08,
+      "violations": 0,
+      "elements": 131072,
+      "rtol": 0.0001,
+      "atol": 1e-05
+    }
+  },
+  "source_replay_checks": "Each output separately poisoned before validation; changed-input replay verified.",
+  "source_commit": "fbefeef4e748bdd7815de95949d9c9ff505a1490"
+}
